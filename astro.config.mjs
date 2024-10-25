@@ -14,20 +14,8 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gianmarco.xyz/",
-  integrations: [
-    sitemap(),
-    robotsTxt({
-      sitemap: [
-        "https://gianmarco.xyz/sitemap-index.xml",
-        "https://gianmarco.xyz/sitemap-0.xml",
-      ],
-    }),
-    solidJs(),
-    UnoCSS({ injectReset: true }),
-    icon(),
-    svelte(),
-  ],
+  site: "https://anandsur.com/",
+  integrations: [sitemap(), solidJs(), UnoCSS({ injectReset: true }), icon(), svelte()],
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
