@@ -2,9 +2,9 @@
 import Card from "./Card/index.astro";
 import Button from "./Button.astro";
 import { LINKS } from "../lib/constants";
-import { Icon } from 'astro-icon/components'
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import me from './me.png';
+import me from "../assets/me.png";
 ---
 
 <Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
@@ -13,7 +13,8 @@ import me from './me.png';
       <div class="flex flex-col h-full">
         <h6 class="text-sm font-light m-0 text-gray-500">namaste</h6>
         <p class="m-0 font-light text-xl">
-          I'm <b class="font-bold">Suryansh Anand</b>, bringing ideas to life through full-stack development. Learning and building in public, one app at a time.
+          I'm <b class="font-bold">Suryansh Anand</b>, bringing ideas to life through full-stack
+          development. Learning and building in public, one app at a time.
         </p>
       </div>
       <div class="flex gap-4 flex-wrap">
@@ -50,10 +51,10 @@ import me from './me.png';
       </div>
     </div>
     <Image
-      
       src={me}
+      loading="eager"
       class="w-auto max-h-[300px] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none object-contain"
-      alt="anime suryansh"
+      alt="anime anand"
     />
   </div>
 </Card>

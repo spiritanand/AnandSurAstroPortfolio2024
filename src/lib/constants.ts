@@ -1,7 +1,7 @@
 export const LINKS = {
   github: "https://github.com/spiritanand/",
   x: "https://x.com/spiritanand",
-  discord: "https://discord.com/users/spiritanand",
+  discord: "https://discord.gg/vBBGkdKcrQ",
   email: "mailto:hi@anandsur.com",
   youtube: "https://www.youtube.com/@spiritanand",
 };
