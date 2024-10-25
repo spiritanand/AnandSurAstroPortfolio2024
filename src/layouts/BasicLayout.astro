@@ -26,26 +26,23 @@ const schema =
     ? {
         "@context": "http://schema.org",
         "@type": "Person",
-        name: "Gianmarco",
-        url: "https://gianmarco.xyz",
-        sameAs: [
-          "https://www.linkedin.com/in/gianmarco-cavallo",
-          "https://github.com/Ladvace",
-        ],
-        image: "https://gianmarco.xyz/og-image.png",
-        jobTitle: "Freelance Frontend Developer",
+        name: "Suryansh Anand",
+        url: "https://anandsur.com",
+        sameAs: ["https://www.linkedin.com/in/spiritanand", "https://github.com/anandsur"],
+        image: "https://anandsur.com/og-image.png",
+        jobTitle: "Full Stack Designer Developer",
         worksFor: {
           "@type": "Organization",
           name: "Self-Employed",
           address: {
             "@type": "PostalAddress",
-            addressLocality: "Italy",
-            addressCountry: "IT",
+            addressLocality: "India",
+            addressCountry: "IN",
           },
         },
         nationality: {
           "@type": "Country",
-          name: "Italy",
+          name: "India",
         },
       }
     : {
@@ -53,26 +50,23 @@ const schema =
         "@type": "BlogPosting",
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `https://gianmarco.xyz/blog/${slug}`,
+          "@id": `https://anandsur.com/blog/${slug}`,
         },
         headline: frontmatter?.title || title,
         description: frontmatter?.description || title,
-        image: "https://gianmarco.xyz/og-image.png", //TODO: dynamic
+        image: "https://anandsur.com/og-image.png",
         author: {
           "@type": "Person",
-          name: "Gianmarco",
-          url: "https://gianmarco.xyz",
-          sameAs: [
-            "https://www.linkedin.com/in/gianmarco-cavallo",
-            "https://github.com/Ladvace",
-          ],
+          name: "Suryansh Anand",
+          url: "https://anandsur.com",
+          sameAs: ["https://www.linkedin.com/in/spiritanand", "https://github.com/spiritanand"],
         },
         publisher: {
           "@type": "Organization",
-          name: "Gianmarco",
+          name: "Suryansh Anand",
           logo: {
             "@type": "ImageObject",
-            url: "https://gianmarco.xyz/og-image.png",
+            url: "https://anandsur.com/og-image.png",
           },
         },
         datePublished: frontmatter?.pubDate || new Date().toISOString(),
@@ -95,25 +89,17 @@ const schema =
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.origin} />
-    <meta
-      property="og:image"
-      content={image || "https://gianmarco.xyz/og-image.png"}
-    />
+    <meta property="og:image" content={image || "https://anandsur.com/og-image.png"} />
     <!-- Basic Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta
-      name="twitter:image"
-      content={image || "https://gianmarco.xyz/og-image.png"}
-    />
+    <meta name="twitter:image" content={image || "https://anandsur.com/og-image.png"} />
 
     <link rel="preconnect" href="https://cdn.fontshare.com" />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
-  <body
-    class="bg-darkslate-700 md:h-screen flex flex-col justify-center items-center"
-  >
+  <body class="bg-darkslate-700 md:h-screen flex flex-col justify-center items-center">
     <slot name="loader" />
     <slot />
   </body>
