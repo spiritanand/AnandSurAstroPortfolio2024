@@ -1,0 +1,44 @@
+---
+import Card from "./Card/index.astro";
+import { projects } from "../lib/constants";
+import { Icon } from "astro-icon/components";
+import Content from "./Card/Content.astro";
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-4" hoverBorder={false}>
+  <div class="h-full">
+    <header class="flex items-center mb-4">
+      <h1 class="text-white text-xl font-bold">My best builds</h1>
+    </header>
+    <ul class="grid grid-cols-1 gap-2">
+      {
+        projects.map((project) => (
+          <li class="relative">
+            <a href={project.link} class="block h-full w-full peer">
+              <Content title={project.name} body={project.description} />
+            </a>
+            <Icon
+              name="ri:arrow-right-up-line"
+              class="h-6 absolute top-2 right-2 text-white peer-hover:opacity-100 peer-hover:text-primary-500 peer-hover:translate-x-1 peer-hover:-translate-y-1 transition-all ease-in-out duration-100 z-20"
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Card>
+
+<!-- <a href={project.link} class="block h-full w-full hover:border-primary-500">
+  <div
+    class="absolute inset-0 bg-cover bg-center transition-all duration-300 ease-in-out group-hover:scale-110"
+    style={`background-image: url(${project.image})`}
+  />
+  <div class="absolute inset-0 bg-black bg-opacity-60 transition-opacity duration-300 ease-in-out group-hover:bg-opacity-40" />
+  <div class="relative h-full p-4 flex flex-col justify-between z-10">
+    <Content title={project.name} body={project.description} />
+    <Icon
+      name="ri:arrow-right-up-line"
+      class="h-6 w-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"
+    />
+  </div>
+</a> -->

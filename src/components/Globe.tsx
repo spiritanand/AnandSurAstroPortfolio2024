@@ -5,18 +5,7 @@ import worldData from "../lib/world.json";
 const GlobeComponent = () => {
   let mapContainer: HTMLDivElement | undefined;
 
-  const visitedCountries = [
-    "France",
-    "China",
-    "Italy",
-    "Sri Lanka",
-    "Turkey",
-    "Greece",
-    "Malta",
-    "Hungary",
-    "Portugal",
-    "Marocco",
-  ];
+  const visitedCountries = ["India", "United Arab Emirates", ""];
 
   onMount(() => {
     if (!mapContainer) return;
@@ -35,11 +24,7 @@ const GlobeComponent = () => {
     const initialScale = projection.scale();
     let pathGenerator = d3.geoPath().projection(projection);
 
-    let svg = d3
-      .select(mapContainer)
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height);
+    let svg = d3.select(mapContainer).append("svg").attr("width", width).attr("height", height);
 
     svg
       .append("circle")
