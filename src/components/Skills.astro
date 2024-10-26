@@ -1,27 +1,115 @@
 ---
 import Card from "./Card/index.astro";
+import HTML from "@/icons/html.astro";
+import CSS from "@/icons/css.astro";
+import TypeScript from "@/icons/typescript.astro";
+import React from "@/icons/react.astro";
+import Node from "@/icons/node.astro";
+import SQL from "@/icons/sql.astro";
+import Git from "@/icons/git.astro";
+import Tailwind from "@/icons/tailwind.astro";
+import Next from "@/icons/next.astro";
+import Figma from "@/icons/Figma.astro";
+import Rust from "@/icons/Rust.astro";
+
+const SKILLS_ICONS: Record<string, any> = {
+  HTML,
+  CSS,
+  TypeScript,
+  React,
+  Node,
+  SQL,
+  Git,
+  Next,
+  Tailwind,
+  Figma,
+  Rust,
+};
+
+const skills = [
+  {
+    name: "TypeScript",
+    level: "Intermediate",
+    keywords: ["Web Development", "Frontend", "Backend", "JavaScript Superset"],
+  },
+  {
+    name: "Next.js",
+    level: "Beginner",
+    keywords: ["Web Development", "Frontend", "React Framework", "SSR", "Static Generation"],
+  },
+  {
+    name: "React",
+    level: "Intermediate",
+    keywords: ["Web Development", "Frontend", "JavaScript Library", "UI"],
+  },
+  {
+    name: "CSS",
+    level: "Intermediate",
+    keywords: ["Web Development", "Frontend", "Responsive Design"],
+  },
+  {
+    name: "Tailwind",
+    level: "Intermediate",
+    keywords: ["Web Development", "Frontend", "CSS Framework", "Responsive Design"],
+  },
+  {
+    name: "Node",
+    level: "Intermediate",
+    keywords: ["Web Development", "Backend", "JavaScript", "Server"],
+  },
+  {
+    name: "Figma",
+    level: "Expert",
+    keywords: ["Design", "UI"],
+  },
+  {
+    name: "SQL",
+    level: "Intermediate",
+    keywords: ["Databases", "SQL", "Data Storage", "Backend"],
+  },
+  {
+    name: "Git",
+    level: "Intermediate",
+    keywords: ["Version Control", "Collaboration", "Source Code"],
+  },
+  {
+    name: "Rust",
+    level: "Beginner",
+    keywords: [
+      "Programming Language",
+      "Systems Programming",
+      "Web Development",
+      "Solana Development",
+      "Web3",
+    ],
+  },
+];
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-6" title="Skills 🛠">
   <div class="flex flex-col gap-2">
     <div class="font-light">
-      <p>My primary tools of choice includes:</p>
-      <ul class="list-disc list-inside">
-        <li>Typescript</li>
-        <li>Next.js</li>
-        <li>React.js</li>
-        <li>CSS/TailwindCSS</li>
-        <li>Express.js</li>
-        <li>Figma</li>
-        <li>Rust</li>
+      <ul class="inline-flex flex-wrap gap-6 mt-4">
+        {
+          skills.map(({ name }) => {
+            const iconName = name === "Next.js" ? "Next" : name;
+            const Icon = SKILLS_ICONS[iconName];
+
+            return (
+              <li class="flex items-center gap-1 items-center rounded-md p-2 py-0.5 text-xs text-skin-muted print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
+                <>
+                  <span class="text-primary-500"> {Icon && <Icon />} </span>
+                  <span class="text-sm">{name}</span>
+                </>
+              </li>
+            );
+          })
+        }
       </ul>
     </div>
     <p class="font-light">
-      I am super psyched about web3 and de-fi. A big believer in the future of the decentralized
+      Super psyched about web3 and de-fi. A big believer in the future of the decentralized
       internet.
-    </p>
-    <p class="font-light">
-      Apart from coding, I am passionate about design, crafting videos and travelling.
     </p>
   </div>
 </Card>
