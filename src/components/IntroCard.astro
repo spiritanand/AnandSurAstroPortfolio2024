@@ -5,6 +5,7 @@ import { LINKS } from "../lib/constants";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import me from "../assets/me.png";
+import Content from "./Card/Content.astro";
 ---
 
 <Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
@@ -16,6 +17,21 @@ import me from "../assets/me.png";
           I'm <b class="font-bold">Suryansh Anand</b>, bringing ideas to life through full-stack
           development. Learning and building in public, one app at a time.
         </p>
+
+        <span class="relative mt-4 w-fit flex items-center gap-2">
+          <a
+            href="https://youtu.be/3c-7qs0zFJs"
+            class="block peer text-sm font-black"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Know More
+          </a>
+          <Icon
+            name="ri:arrow-right-up-line"
+            class="h-6 text-white peer-hover:opacity-100 peer-hover:text-primary-500 peer-hover:translate-x-1 peer-hover:-translate-y-1 transition-all ease-in-out duration-100 z-20"
+          />
+        </span>
       </div>
       <div class="flex gap-4 flex-wrap">
         <a href={LINKS.github} aria-label="github profile" target="_blank">
