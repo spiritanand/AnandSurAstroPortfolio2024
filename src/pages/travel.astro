@@ -7,11 +7,7 @@ import BasicLayout from "../layouts/BasicLayout.astro";
   import { timeline, type TimelineDefinition } from "motion";
 
   const sequence = [
-    [
-      ".loaderRef",
-      { opacity: [1, 0], pointerEvents: "none" },
-      { easing: "ease-out" },
-    ],
+    [".loaderRef", { opacity: [1, 0], pointerEvents: "none" }, { easing: "ease-out" }],
   ];
 
   timeline(sequence as TimelineDefinition);
@@ -21,7 +17,6 @@ import BasicLayout from "../layouts/BasicLayout.astro";
   title="Suryansh Anand - Places I've Been"
   description="A 3d globe showing countries that I have visited so far"
   page="travel"
-
 >
   <a
     href="/"

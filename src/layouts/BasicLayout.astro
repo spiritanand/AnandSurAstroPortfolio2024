@@ -19,9 +19,7 @@ interface Props {
 
 const { title, description, page, slug, frontmatter } = Astro.props;
 const image =
-  page === "travel"
-    ? `${Astro.url.origin}/globe_preview.webp"`
-    : `${Astro.url.origin}/og-image.png`;
+  page === "travel" ? `${Astro.url.origin}/globe_preview.png"` : `${Astro.url.origin}/og-image.png`;
 
 const schema =
   page !== "blog"
